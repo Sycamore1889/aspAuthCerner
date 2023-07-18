@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Index Page";
+}
+
+<script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
+<script>
+    FHIR.oauth2.ready()
+        .then(client => client.request("Patient"))
+        .then(console.log)
+        .catch(console.error);
+</script>
+
+
